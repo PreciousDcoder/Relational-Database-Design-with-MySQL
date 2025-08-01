@@ -1,0 +1,42 @@
+-- Finding out the number of customers that churned by each age
+SELECT COUNT(*), Age AS ChurnedAge
+FROM customers
+WHERE Exited = 1
+GROUP BY ChurnedAge;
+
+-- Identifying Most Churned Gender
+SELECT Gender, COUNT(*) AS ChurnedGenderCount
+FROM customers
+WHERE Exited = 1
+GROUP BY Gender
+ORDER BY ChurnedGenderCount DESC;
+
+
+-- Identifying Most Churned NumOfProducts
+SELECT NumOfProducts, COUNT(*) AS ChurnedNumOfProductsCount
+FROM customers
+WHERE Exited = 1
+GROUP BY NumOfProducts
+ORDER BY ChurnedNumOfProductsCount DESC;
+
+
+-- Identifying most churned category and segments (Geography, NumOfProducts, Gender)
+SELECT Geography, COUNT(*) AS ChurnedCount
+FROM customers 
+WHERE Exited = 1
+GROUP BY Geography
+ORDER BY ChurnedCount DESC
+LIMIT 1;
+
+
+-- Identifying most churned category and segments (Geography, NumOfProducts, Gender)
+SELECT Geography, COUNT(*) AS ChurnedCount
+FROM customers 
+WHERE Exited = 1
+GROUP BY Geography
+ORDER BY ChurnedCount DESC
+LIMIT 1;
+
+-- Finding the total number of customers
+SELECT COUNT(*) AS Totalcustomers
+FROM customers;
